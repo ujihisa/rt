@@ -23,14 +23,14 @@ fi
 
 case $1 in
 	on)
-		if ! grep -q " $keysign\$" $fn >/dev/null; then
+		if ! grep -q " $keysign\$" $fn 2>/dev/null; then
 			echo "$pubkey $keysign" >> $fn
 		fi
 
 		echo GRANTED
 		;;
 	off)
-		sed -i "/$keysign/d" $fn
+		sed -i "/$keysign/d" $fn 2>/dev/null
 
 		echo REVOKED
 		;;
