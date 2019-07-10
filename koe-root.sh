@@ -2,7 +2,7 @@
 
 function bye(){
 	echo $@
-	exit
+	exit 1
 }
 
 keysign=koe-6387871410@local
